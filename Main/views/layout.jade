@@ -1,0 +1,44 @@
+doctype html
+html
+	head
+		title= title
+		meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+		link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css')
+		link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css')
+		link(rel='stylesheet' href='/mfb/src/mfb.css')
+		link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css')
+		link(rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Open+Sans')
+		link(rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Oleo+Script')
+		link(rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Redressed')
+		link(rel='stylesheet' href='/stylesheets/style.css')
+		link(rel='stylesheet' href='/stylesheets/parallax-scroll.css')
+		script(src='https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.1.3/mustache.js')
+		script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js')
+		script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js')
+
+	body
+		block content
+
+	script(src='/mfb/src/mfb.js')
+	script(src='/javascripts/main.js')
+	script(id='guest-search-results-template' type='x-tmpl-mustache').
+		 {{#people.length}}
+		 	<p>Please choose your name from the search results below:</p>
+		 {{/people.length}}
+		 <ul>
+		 	{{#people}}
+		 		<li>
+					<a href="#">
+						{{name}}
+					</a>
+				</li>
+		 	{{/people}}
+		 	{{^people}}
+		 		<li><span class="glyphicon glyphicon-remove"></span>
+		 		No results were found.<br />Try a different search, or just <a href="mailto:gkoehler@gmail.com?subject=RSVP">send your RSVP to Gavin &amp; Michaela directly</a>.</li>
+		 	{{/people}}
+		 </ul>
+		 <p class="nav">
+		 <a class="goback" href="#">Start Over</a>
+		 </p>
+

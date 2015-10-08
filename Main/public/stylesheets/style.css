@@ -1,0 +1,311 @@
+@font-face {
+    font-family: 'Champignon';
+    src: url('../fonts/champignon.woff2') format('woff2'),
+       url('../fonts/champignon.woff') format('woff');
+}
+@font-face {
+    font-family: 'Optimus Princeps';
+    src: url('../fonts/OptimusPrinceps.woff2') format('woff2'),
+       url('../fonts/OptimusPrinceps.woff') format('woff');
+}
+@font-face {
+    font-family: 'Optimus Princeps SemiBold';
+    src: url('../fonts/OptimusPrincepsSemiBold.woff2') format('woff2'),
+       url('../fonts/OptimusPrincepsSemiBold.woff') format('woff');
+}
+body {
+	font-size: 14px;
+	font-family: 'Open Sans' sans-serif;
+    font-weight: 300;
+	-webkit-overflow-scrolling: touch;
+}
+
+.nav {
+	margin-left: 5px;
+}
+
+.nav > li {
+	height: 30px;
+}
+
+.nav > li > a {
+	padding: 5px 5px;
+}
+
+h1 {
+	font-size: 150px;
+    font-family: 'Champignon';
+}
+h2 {
+    font-size: 150px;
+}
+h3 {
+    font-size: 65px;
+}
+h4 {
+    font-size: 50px;
+}
+h2,h3,h4,h5,h6 {
+    margin-top: 0px;
+    margin-bottom: 20px;
+    font-family: 'Optimus Princeps SemiBold';
+}
+
+@media (max-width: 768px) {
+    h1,h2 {
+        font-size: 60px;
+    }
+    h2 {
+        font-size: 35px;
+    }
+    h3 {
+        font-size: 35px;
+    }
+    h4 {
+        font-size: 35px;
+    }
+}
+
+a:hover,
+a:focus {
+    text-decoration: none;
+    color: #fff;
+}
+.amp{
+	font-size: 50px;
+    font-family: 'Optimus Princeps';
+}
+
+@media (max-width: 768px) {
+    .amp {
+        font-size: 25px;
+    }
+}
+
+.content {
+    -webkit-transform: translate(0,-50%);
+	transform: translate(0,-50%);
+}
+
+.content > * {
+    height: 100%;
+}
+.content-text {
+	color: #fff;
+	text-align: center;
+    font-size: 20px;
+    padding: 0px 20px;
+}
+
+@media (max-width: 768px) {
+    .content-text {
+        font-size: 14px;
+    }
+}
+
+.navigation {
+	z-index: 9999;
+	position: fixed;
+	/* right: 0; */
+	/* margin-right: 50%; */
+	width: 100%;
+	text-align: center;
+}
+
+.color-navy {
+	color: #032540;
+}
+.background-color-navy {
+	background-color: #032540;
+}
+.color-red {
+	color: #800000;
+}
+.background-color-red {
+	background-color: #800000;
+}
+.color-gray {
+    color: #f2f2f2;
+}
+.background-color-gray {
+    background-color: #f2f2f2;
+}
+
+.image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.image-group {
+	height: 100%;
+    width: 100%;
+	position: absolute;
+}
+
+/*
+    IMAGE TODOS:
+        - Optimize all of them (they're like 3 MB each right now)
+        - Somehow use a cropped version for mobile
+
+*/
+#image-lg-1 {
+    background-image: url(../images/dist/koehler-026.jpg);
+}
+#image-lg-2 {
+    background-image: url(../images/dist/koehler-024.jpg);
+    height: 150%;
+}
+#image-lg-3 {
+    background-image: url(../images/dist/koehler-032.jpg);
+    height: 150%;
+}
+#image-md-1 {
+    background-image: url(../images/dist/koehler-045.jpg);
+}
+#image-sm-1 {
+    background-image: url(../images/dist/koehler-001.jpg);
+}
+#image-sm-2 {
+    background-image: url(../images/dist/koehler-048.jpg);
+}
+#image-sm-3 {
+    background-image: url(../images/dist/koehler-011.jpg);
+}
+#image-sm-4 {
+    background-image: url(../images/dist/koehler-005.jpg);
+}
+#image-sm-5 {
+    background-image: url(../images/dist/koehler-040.jpg);
+}
+#image-sm-6 {
+    background-image: url(../images/dist/koehler-020.jpg);
+}
+
+.mfb-component__button--main,
+.mfb-component__button--child {
+    display: inline-block;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    vertical-align: middle;
+    text-align: center;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.mfb-component__button--main {
+    overflow: hidden;
+    line-height: 50px;
+}
+
+.mfb-component__button--child > i {
+    right: 0;
+    line-height: 50px;
+}
+
+[data-mfb-label]:after {
+    color: #032540;
+    background-color: #fff;
+}
+
+.btn {
+    font-size: 20px;
+    border-color: #fff;
+}
+
+.btn > a {
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .btn {
+        font-size: 14px;
+    }
+}
+
+/* Fade in/out animation */
+.fade-in {
+	-webkit-animation: fadein 1s ease-in 1s forwards; /* Safari, Chrome and Opera > 12.1 */
+	-moz-animation: fadein 1s ease-in 1s forwards; /* Firefox < 16 */
+	-ms-animation: fadein 1s ease-in 1s forwards; /* Internet Explorer */
+	-o-animation: fadein 1s ease-in 1s forwards; /* Opera < 12.1 */
+	animation: fadein 1s ease-in 1s forwards;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.fade-opacity {
+	-webkit-animation: fadeout 1s ease-in 1s forwards; /* Safari, Chrome and Opera > 12.1 */
+	-moz-animation: fadeout 1s ease-in 1s forwards; /* Firefox < 16 */
+	-ms-animation: fadeout 1s ease-in 1s forwards; /* Internet Explorer */
+	-o-animation: fadeout 1s ease-in 1s forwards; /* Opera < 12.1 */
+	animation: fadeout 1s ease-in 1s forwards;
+}
+
+@keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0.5; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0.5; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0.5; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0.5; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0.5; }
+}

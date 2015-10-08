@@ -1,0 +1,136 @@
+extends layout
+
+mixin modal(id, title, buttonText)
+		div(class="modal fade" id=id tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style!=attributes.style)
+			div(class="modal-dialog" role="document")
+				div(class="modal-content")
+						div(class="modal-header")
+						button(type="button" class="close" data-dismiss="modal" aria-label="Close")
+							span(aria-hidden="true")&times;
+						h4(class="modal-title" id="myModalLabel")= title
+					div(class="modal-body") Some Text
+					div(class="modal-footer")
+						button(type="button" class="btn btn-default" data-dismiss="modal") Close
+						button(type="button" class="btn btn-primary")= buttonText
+
+block content
+
+	include nav
+
+	div(class="parallax")
+		#group1.parallax__group
+			div(class="parallax__layer parallax__layer--back")
+				div(class="image fade-opacity" id="image-lg-1")
+			div(class="parallax__layer parallax__layer--base")
+				div(class="content content-text fade-in" style="opacity:0;")
+					h1(class="color-navy" ) Alexander Koehler
+					span(class="color-red amp") &amp;
+					h1(class="color-navy") Samantha Lauf
+					h4(class="color-red") February 20, 2016
+
+		//- Informational stuff here (addresses, links to google maps directions)
+		#directions.parallax__group__half.group2
+			div(id="directions" class="parallax__layer parallax__layer--base background-color-navy")
+				div(class="content content-text")
+					h3 We are getting married!
+					| Alex and Sami are getting married on February 20, 2016.<br>
+					| The ceremony will take place at St. John Lutheran Church at 2 o'clock PM.
+					| The reception, immediately following the ceremony, will take place
+					| at Chez Hay.
+					br
+					br
+					div(class="btn-group")
+						button(class="btn background-color-red")
+							a(href="https://www.google.com/maps/place/St+John+Lutheran+Church/@40.915272,-97.0924528,17z/data=!3m1!4b1!4m2!3m1!1s0x8796d7e26f5fbd55:0x3ce5614b56230d8d" target="_blank") Directions to St. John
+						button(class="btn background-color-red")
+							a(href="https://www.google.com/maps/place/Chez+Hay+Catering/@40.8150064,-96.7007718,17z/data=!3m1!4b1!4m2!3m1!1s0x8796bee4ac255951:0xe471c5d837c95f1e" target="_blank") Directions to Chez Hay
+
+		.parallax__group__half.group2
+			div(class="parallax__layer parallax__layer--base")
+				.content.image-group
+					//- Insert smaller images here
+					.col-xs-4
+						#image-sm-1.image
+					.col-xs-4
+						#image-sm-2.image
+					.col-xs-4
+						#image-sm-3.image
+
+
+		.parallax__group__half.group3
+			div(class="parallax__layer parallax__layer--back" style="opacity: 0.5")
+				div(class="image" id="image-lg-2")
+			div(class="parallax__layer parallax__layer--base")
+				div(class="content content-text")
+						h2(class="color-red date") 2
+							span(class="color-navy date") &middot;
+							| 20
+							span(class="color-navy date") &middot;
+							| 16
+
+		//- RSVP here
+		#rsvp.parallax__group__half.group4
+			div(class="parallax__layer parallax__layer--base background-color-gray")
+				div(class="content content-text")
+					h3(class="color-red") RSVP
+					label(class="color-red") RSVPs are currently disabled. Check back soon!
+					//- form(id="rsvp-search")
+						.input-group
+							label(class="color-red") To RSVP for this event, please enter your first or last name below
+							input(type="text" class="form-control" id="rsvp-name" placeholder="Name")
+							span(class="input-group-btn")
+								button(class="btn background-color-red" type="submit") Search
+
+		.parallax__group__half.group4
+			div(class="parallax__layer parallax__layer--base")
+				.content.image-group
+					//- Insert smaller images here
+					.col-xs-4
+						#image-sm-4.image
+					.col-xs-4
+						#image-sm-5.image
+					.col-xs-4
+						#image-sm-6.image
+
+		.parallax__group__half.group5
+			div(class="parallax__layer parallax__layer--back" style="opacity: 0.5")
+				div(class="image" id="image-lg-3")
+			div(class="parallax__layer parallax__layer--base")
+				div(class="content content-text")
+						h2(class="color-red date") 2
+							span(class="color-navy date") &middot;
+							| 20
+							span(class="color-navy date") &middot;
+							| 16
+
+				//- Informational stuff here (addresses, links to google maps directions)
+		#registry.parallax__group__half.group6
+			div(class="parallax__layer parallax__layer--base background-color-navy")
+				div(class="content content-text")
+					h3 Registry
+					| We are registered at Bed Bath &amp; Beyond and Target
+					br
+					br
+					div(class="btn-group")
+						button(class="btn background-color-red")
+							a(href="http://www.bedbathandbeyond.com/store/giftregistry/view_registry_guest.jsp?sorting=1&pwsToken=&eventType=Wedding&registryId=542697878&pwsurl=&view=2" target="_blank") Bed Bath &amp; Beyond
+						button(class="btn background-color-red")
+							a(href="http://www.target.com/gift-registry/giftgiver?registryId=nRtkIyoeaS7zJL8f8b3YIQ&registryType=WEDDING" target="_blank") Target
+
+		.parallax__group__half.group6
+			div(class="parallax__layer parallax__layer--base")
+				.content.image-group
+					//- Insert smaller images here
+					.col-xs-4
+						#image-sm-1.image
+					.col-xs-4
+						#image-sm-2.image
+					.col-xs-4
+						#image-sm-3.image
+
+
+
+		+modal('rsvp-modal', 'RSVP', 'Submit')(style="display:none;")
+
+
+
