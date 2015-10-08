@@ -55,9 +55,6 @@ h2,h3,h4,h5,h6 {
     h1,h2 {
         font-size: 60px;
     }
-    h2 {
-        font-size: 35px;
-    }
     h3 {
         font-size: 35px;
     }
@@ -138,7 +135,6 @@ a:focus {
     position: absolute;
     width: 100%;
     height: 100%;
-    position: absolute;
     left: 50%;
     top: 50%;
     -webkit-transform: translate(-50%, -50%);
@@ -150,15 +146,16 @@ a:focus {
 	position: absolute;
 }
 
-/*
-    IMAGE TODOS:
-        - Optimize all of them (they're like 3 MB each right now)
-        - Somehow use a cropped version for mobile
+@media (max-width: 768px) {
+    .image-group > div:nth-child(3) {
+        display: none;
+    }
+}
 
-*/
 #image-lg-1 {
     background-image: url(../images/dist/koehler-026.jpg);
 }
+
 #image-lg-2 {
     background-image: url(../images/dist/koehler-024.jpg);
     height: 150%;
@@ -166,6 +163,23 @@ a:focus {
 #image-lg-3 {
     background-image: url(../images/dist/koehler-032.jpg);
     height: 150%;
+}
+@media (max-width: 768px) {
+    #image-lg-1 {
+        background-image: url(../images/dist/koehler-026-m.jpg);
+    }
+    #image-lg-2 {
+        background-image: url(../images/dist/koehler-024-m.jpg);
+    }
+    #image-lg-3 {
+        background-image: url(../images/dist/koehler-032-m.jpg);
+    }
+    #image-lg-1,
+    #image-lg-2,
+    #image-lg-3 {
+        width: 50%;
+        height: 50%;
+    }
 }
 #image-md-1 {
     background-image: url(../images/dist/koehler-045.jpg);
@@ -187,6 +201,15 @@ a:focus {
 }
 #image-sm-6 {
     background-image: url(../images/dist/koehler-020.jpg);
+}
+#image-sm-7 {
+    background-image: url(../images/dist/koehler-022.jpg);
+}
+#image-sm-8 {
+    background-image: url(../images/dist/koehler-065.jpg);
+}
+#image-sm-9 {
+    background-image: url(../images/dist/koehler-052.jpg);
 }
 
 .mfb-component__button--main,

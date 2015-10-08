@@ -49,4 +49,8 @@ $(function () {
         });
         return false;
     });
+
+    $('.mfb-component__button--child').click( function () {
+        $('.mfb-component--br').attr('data-mfb-state', 'closed');
+    });
 });
