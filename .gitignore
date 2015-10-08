@@ -1,4 +1,5 @@
 
 Main/node_modules/*
+Main/grunt/node_modules/*
 Main/public/images/dist/*
 
