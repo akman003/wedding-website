@@ -150,10 +150,17 @@ block content
 		#travel-info.parallax__group__half.group8
 			div(class="parallax__layer parallax__layer--base background-color-red")
 				div(class="content content-text")
-					h3 Travel
+					h3 Accomodations
+					| We have blocks reserved at Embassy Suites and Hyatt Place in downtown Lincoln.
+					br
+					| Make sure you mention the Lauf/Koehler wedding. Rooms will be held until 01/18/2016.
+					br
+					br
 					div(class="btn-group")
-						button(id="accomodations" class="btn background-color-navy") Accomodations
-						button(id="flight-info" class="btn background-color-navy") Flight Information
+						button(class="btn background-color-navy")
+							a(href="http://embassysuites3.hilton.com/en/hotels/nebraska/embassy-suites-by-hilton-lincoln-LNKESES/index.html" target="_blank") Embassy Suites
+						button(class="btn background-color-navy")
+							a(href="http://www.lincolndowntownhaymarket.place.hyatt.com/en/hotel/home.html" target="_blank") Hyatt Place
 
 		.parallax__group__half.group8
 			div(class="parallax__layer parallax__layer--base")
@@ -167,7 +174,6 @@ block content
 						#image-sm-6.image
 
 	+modal('rsvp-modal', 'RSVP', 'Start Over')(style="display:none;")
-	+modal('accomodations-modal', 'Accomodations', 'OK')(style="display:none;")
 
 	include templates
 

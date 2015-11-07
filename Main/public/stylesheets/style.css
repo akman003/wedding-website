@@ -275,6 +275,13 @@ a:focus:not(.guest),
     font-size: 20px;
 }
 
+@media (max-width: 768px) {
+    #rsvp-name {
+        font-size: 14px;
+        height: 34px;
+    }
+}
+
 .input-group {
     width: 60%;
     margin-left: auto;

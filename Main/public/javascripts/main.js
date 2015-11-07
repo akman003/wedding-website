@@ -117,11 +117,6 @@ $(function () {
         $('.mfb-component--br').attr('data-mfb-state', 'closed');
     });
 
-    $('#accomodations').click( function () {
-        // TODO: Set html from template
-        $('#accomodations-modal').modal('show');
-    });
-
     $('#rsvp-modal').on('hidden.bs.modal', function() {
         var $this = $(this);
         $this.find('#guest-search-results').html('').hide();
