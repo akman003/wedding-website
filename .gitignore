@@ -2,4 +2,7 @@
 Main/node_modules/*
 Main/grunt/node_modules/*
 Main/public/images/dist/*
+API/inviteeFixture.json
+API/invitees.json
+API/invitees.csv
 
