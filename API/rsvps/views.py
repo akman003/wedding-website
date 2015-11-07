@@ -32,6 +32,7 @@ def invitee_detail(request, pk, format=None):
 
 	elif request.method == 'POST':
 		serializer = InviteeSerializer(invitee, data=request.DATA)
+		serializer = InviteeSerializer(invitee, data=request.data)
 		if serializer.is_valid():
 			if invitee.num_rsvpd > invitee.num_allowed:
 				return Response("{detail:'Can\'t RSVP more than allowed'}", status=status.HTTP_400_BAD_REQUEST)
