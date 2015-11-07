@@ -51,7 +51,7 @@ h2,h3,h4,h5,h6 {
     font-family: 'Optimus Princeps SemiBold';
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     h1,h2 {
         font-size: 60px;
     }
@@ -63,8 +63,10 @@ h2,h3,h4,h5,h6 {
     }
 }
 
-a:hover,
-a:focus {
+a:hover:not(.guest),
+a:focus:not(.guest),
+.btn:hover,
+.btn:focus {
     text-decoration: none;
     color: #fff;
 }
@@ -110,22 +112,31 @@ a:focus {
 }
 
 .color-navy {
-	color: #032540;
+	color: #032540 !important;
 }
 .background-color-navy {
-	background-color: #032540;
+	background-color: #032540 !important;
+}
+.border-navy {
+    border-color: #032540 !important;
 }
 .color-red {
-	color: #800000;
+	color: #800000 !important;
 }
 .background-color-red {
-	background-color: #800000;
+	background-color: #800000 !important;
+}
+.border-red {
+    border-color: #800000 !important;
 }
 .color-gray {
-    color: #f2f2f2;
+    color: #f2f2f2 !important;
 }
 .background-color-gray {
-    background-color: #f2f2f2;
+    background-color: #f2f2f2 !important;
+}
+.border-gray {
+    border-color: #f2f2f2 !important;
 }
 
 .image {
@@ -146,7 +157,7 @@ a:focus {
 	position: absolute;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .image-group > div:nth-child(3) {
         display: none;
     }
@@ -256,6 +267,25 @@ a:focus {
     .btn {
         font-size: 14px;
     }
+}
+
+#rsvp-name {
+    height: 42px;
+    border-color: #fff;
+}
+
+/* Modals */
+body.modal-open {
+    overflow: visible;
+}
+
+.modal-header,
+.modal-footer {
+    text-align: center;
+}
+
+.btn {
+    color: #fff;
 }
 
 /* Fade in/out animation */

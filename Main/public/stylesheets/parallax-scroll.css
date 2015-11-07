@@ -64,15 +64,16 @@ html,body {height: 100%}
     transform: translate(-50%, -50%);
 }
 
-.group1 {
+.group1,
+.group3,
+.group5,
+.group7 {
     z-index: 1;
 }
+
 .group2,
 .group4,
-.group6 {
+.group6,
+.group8 {
     z-index: 2;
-}
-.group3,
-.group5 {
-    z-index: 1;
 }
