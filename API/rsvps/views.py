@@ -31,7 +31,6 @@ def invitee_detail(request, pk, format=None):
 		return Response(serializer.data)
 
 	elif request.method == 'POST':
-		serializer = InviteeSerializer(invitee, data=request.DATA)
 		serializer = InviteeSerializer(invitee, data=request.data)
 		if serializer.is_valid():
 			if invitee.num_rsvpd > invitee.num_allowed:
