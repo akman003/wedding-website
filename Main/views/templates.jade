@@ -1,0 +1,57 @@
+script(id='guest-search-results-template' type='x-tmpl-mustache').
+    {{#people.length}}
+    <p>Please choose your name from the search results below:</p>
+    {{/people.length}}
+    <ul>
+    {{#people}}
+        <li>
+            <a href="{{id}}" class="guest">
+                {{name}}
+            </a>
+        </li>
+    {{/people}}
+    {{^people}}
+        <li><span class="glyphicon glyphicon-remove"></span>
+        No results were found.<br />Try a different search (make sure you entered just your last name!), or just <a href="mailto:alexkoeh@gmail.com?subject=RSVP">send your RSVP to Alex and Sami directly</a>.</li>
+    {{/people}}
+    </ul>
+
+script(id="attendance-template" type="x-tmpl-mustache").
+    <p class="attendeename">{{name}}</p>
+    <form id="attending-form" data-guestid="{{id}}" data-guestname="{{name}}">
+        <p>
+            <input type="radio" name="attendance-radio" id="isattending" value="attending" checked="checked" />
+            <label for="isattending">
+                Yes,
+                <select name="num_attending">
+                    {{#num_allowed_array}}
+                    <option value={{num}} selected={{checked}}>{{num}}</option>
+                    {{/num_allowed_array}}
+                </select>
+                of us will be attending
+            </label>
+        </p>
+        <p>
+            <input type="radio" name="attendance-radio" id="isnotattending" value="notattending" />
+            <label for="isnotattending">
+                We decline with regrets
+            </label>
+        </p>
+
+        <button class="btn background-color-red" type="submit">Submit</button>
+    </form>
+
+script(id="error-template" type="x-tmpl-mustache").
+    <p>
+        Something went wrong! Please try starting over, or just
+        <a href="mailto:alexkoeh@gmail.com?subject=RSVP">send your RSVP to Alex and Sami directly</a>.</li>
+    </p>
+
+script(id="confirmation-template" type="x-tmpl-mustache").
+    <p class="attendeename">{{name}}</p>
+    <p>We have your RSVP. Thank you! We look forward to seeing you on February 20th!</p>
+
+
+script(id="confirmation-decline-template" type="x-tmpl-mustache").
+    <p class="attendeename">{{name}}</p>
+    <p>Thank you for letting us know!<br /> We hope to see you another time.</p>

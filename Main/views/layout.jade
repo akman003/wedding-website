@@ -21,24 +21,4 @@ html
 
 	script(src='/mfb/src/mfb.js')
 	script(src='/javascripts/main.js')
-	script(id='guest-search-results-template' type='x-tmpl-mustache').
-		 {{#people.length}}
-		 	<p>Please choose your name from the search results below:</p>
-		 {{/people.length}}
-		 <ul>
-		 	{{#people}}
-		 		<li>
-					<a href="#">
-						{{name}}
-					</a>
-				</li>
-		 	{{/people}}
-		 	{{^people}}
-		 		<li><span class="glyphicon glyphicon-remove"></span>
-		 		No results were found.<br />Try a different search, or just <a href="mailto:gkoehler@gmail.com?subject=RSVP">send your RSVP to Gavin &amp; Michaela directly</a>.</li>
-		 	{{/people}}
-		 </ul>
-		 <p class="nav">
-		 <a class="goback" href="#">Start Over</a>
-		 </p>
 

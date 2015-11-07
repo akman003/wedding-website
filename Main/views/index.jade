@@ -1,17 +1,25 @@
 extends layout
 
-mixin modal(id, title, buttonText)
-		div(class="modal fade" id=id tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style!=attributes.style)
-			div(class="modal-dialog" role="document")
-				div(class="modal-content")
-						div(class="modal-header")
-						button(type="button" class="close" data-dismiss="modal" aria-label="Close")
-							span(aria-hidden="true") &times;
-						h4(class="modal-title" id="myModalLabel")= title
-					div(class="modal-body") Some Text
+mixin modal(id, title, closeButtonText, buttonText)
+	div(class="modal fade" id=id tabindex="-1" role="dialog" style!=attributes.style)
+		div(class="modal-dialog" )
+			div(class="modal-content")
+				div(class="modal-header")
+					button(type="button" class="close" data-dismiss="modal" aria-label="Close")
+						span(aria-hidden="true") &times;
+					h4(class="modal-title")= title
+				div(class="modal-body")
+					#guest-search-results(style="display:none;")
+					#attendance(style="display:none;")
+					#confirmation(style="display:none;")
+					#confirmation-decline(style="display:none;")
+					#error(style="display:none;")
+				if closeButtonText || buttonText
 					div(class="modal-footer")
-						button(type="button" class="btn btn-default" data-dismiss="modal") Close
-						button(type="button" class="btn btn-primary")= buttonText
+						if closeButtonText
+							button(type="button" class="btn background-color-red" data-dismiss="modal")= closeButtonText
+						if buttonText
+							button(type="button" class="btn background-color-red")= buttonText
 
 block content
 
@@ -33,10 +41,11 @@ block content
 			div(id="directions" class="parallax__layer parallax__layer--base background-color-navy")
 				div(class="content content-text")
 					h3 We are getting married!
-					| Alex and Sami are getting married on February 20, 2016.<br>
-					| The ceremony will take place at St. John Lutheran Church at 2 o'clock PM.
-					| The reception, immediately following the ceremony, will take place
-					| at Chez Hay.
+					| Alex and Sami are getting married on February 20, 2016.
+					br
+					| The ceremony will take place at St. John Lutheran Church at 2 o'clock PM, in Seward, NE.
+					br
+					| The reception, immediately following the ceremony, will take place at Chez Hay in Lincoln, NE.
 					br
 					br
 					div(class="btn-group")
@@ -56,31 +65,29 @@ block content
 					.col-sm-4
 						#image-sm-3.image
 
-
 		.parallax__group__half.group3
 			div(class="parallax__layer parallax__layer--back" style="opacity: 0.5")
 				div(class="image" id="image-lg-2")
 			div(class="parallax__layer parallax__layer--base")
 				div(class="content content-text")
-						h2(class="color-red date") 2
-							span(class="color-navy date") &middot;
-							| 20
-							span(class="color-navy date") &middot;
-							| 16
+					h2(class="color-red date") 2
+						span(class="color-navy date") &middot;
+						| 20
+						span(class="color-navy date") &middot;
+						| 16
 
 		//- RSVP here
 		#rsvp.parallax__group__half.group4
-			div(class="parallax__layer parallax__layer--base background-color-gray")
+			div(class="parallax__layer parallax__layer--base background-color-red")
 				div(class="content content-text")
-					h3(class="color-red") RSVP
-					.color-red
-						| RSVPs are currently disabled. Check back soon!
-					//- form(id="rsvp-search")
+					h3 RSVP
+					//- | RSVPs are currently disabled. Check back soon!
+					form(id="rsvp-search")
+						label To RSVP for this event, please enter your last name below
 						.input-group
-							label(class="color-red") To RSVP for this event, please enter your first or last name below
-							input(type="text" class="form-control" id="rsvp-name" placeholder="Name")
+							input(type="text" class="form-control" id="rsvp-name" placeholder="Last Name")
 							span(class="input-group-btn")
-								button(class="btn background-color-red" type="submit") Search
+								button(class="btn background-color-navy" type="submit") Search
 
 		.parallax__group__half.group4
 			div(class="parallax__layer parallax__layer--base")
@@ -98,11 +105,11 @@ block content
 				div(class="image" id="image-lg-3")
 			div(class="parallax__layer parallax__layer--base")
 				div(class="content content-text")
-						h2(class="color-red date") 2
-							span(class="color-navy date") &middot;
-							| 20
-							span(class="color-navy date") &middot;
-							| 16
+					h2(class="color-red date") 2
+						span(class="color-navy date") &middot;
+						| 20
+						span(class="color-navy date") &middot;
+						| 16
 
 				//- Informational stuff here (addresses, links to google maps directions)
 		#registry.parallax__group__half.group6
@@ -129,9 +136,38 @@ block content
 					.col-sm-4
 						#image-sm-9.image
 
+		.parallax__group__half.group7
+			div(class="parallax__layer parallax__layer--back" style="opacity: 0.5")
+				div(class="image" id="image-lg-2")
+			div(class="parallax__layer parallax__layer--base")
+				div(class="content content-text")
+					h2(class="color-red date") 2
+						span(class="color-navy date") &middot;
+						| 20
+						span(class="color-navy date") &middot;
+						| 16
 
+		#travel-info.parallax__group__half.group8
+			div(class="parallax__layer parallax__layer--base background-color-red")
+				div(class="content content-text")
+					h3 Travel
+					div(class="btn-group")
+						button(id="accomodations" class="btn background-color-navy") Accomodations
+						button(id="flight-info" class="btn background-color-navy") Flight Information
 
-		+modal('rsvp-modal', 'RSVP', 'Submit')(style="display:none;")
+		.parallax__group__half.group8
+			div(class="parallax__layer parallax__layer--base")
+				.content.image-group
+					//- Insert smaller images here
+					.col-sm-4.col-xs-6
+						#image-sm-4.image
+					.col-sm-4.col-xs-6
+						#image-sm-5.image
+					.col-sm-4
+						#image-sm-6.image
 
+	+modal('rsvp-modal', 'RSVP', 'Start Over')(style="display:none;")
+	+modal('accomodations-modal', 'Accomodations', 'OK')(style="display:none;")
 
+	include templates
 
