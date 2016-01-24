@@ -117,6 +117,17 @@ $(function () {
         $('.mfb-component--br').attr('data-mfb-state', 'closed');
     });
 
+    $('#wedding-video').click( function () {
+        var $videoModal = $('#video-modal');
+        $videoModal.modal('show');
+        // $videoModal.find('video')[0].play();
+        return false;
+    });
+
+    $('#video-modal').on('hidden.bs.modal', function() {
+        $(this).find('video')[0].pause();
+    });
+
     $('#rsvp-modal').on('hidden.bs.modal', function() {
         var $this = $(this);
         $this.find('#guest-search-results').html('').hide();
