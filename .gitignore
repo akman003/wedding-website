@@ -6,5 +6,3 @@ Main/public/images/dist/*
 API/invitees.json
 API/invitees.csv
 API/inviteeFixture.json
-
-*.mp4
