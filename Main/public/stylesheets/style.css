@@ -155,6 +155,7 @@ a:focus:not(.guest),
 	height: 100%;
     width: 100%;
 	position: absolute;
+    margin-top: -1px;
 }
 
 @media (max-width: 767px) {
@@ -164,63 +165,25 @@ a:focus:not(.guest),
 }
 
 #image-lg-1 {
-    background-image: url(../images/dist/koehler-026.jpg);
+    background-image: url(../images/dist/koehler-331.jpg);
 }
 
-#image-lg-2 {
-    background-image: url(../images/dist/koehler-024.jpg);
-    height: 150%;
-}
-#image-lg-3 {
-    background-image: url(../images/dist/koehler-032.jpg);
-    height: 150%;
-}
 @media (max-width: 768px) {
     #image-lg-1 {
-        background-image: url(../images/dist/koehler-026-m.jpg);
+        background-image: url(../images/dist/koehler-331-m.jpg);
     }
-    #image-lg-2 {
-        background-image: url(../images/dist/koehler-024-m.jpg);
-    }
-    #image-lg-3 {
-        background-image: url(../images/dist/koehler-032-m.jpg);
-    }
-    #image-lg-1,
-    #image-lg-2,
-    #image-lg-3 {
+    #image-lg-1{
         width: 50%;
         height: 50%;
     }
 }
-#image-md-1 {
-    background-image: url(../images/dist/koehler-045.jpg);
-}
-#image-sm-1 {
-    background-image: url(../images/dist/koehler-001.jpg);
-}
-#image-sm-2 {
-    background-image: url(../images/dist/koehler-048.jpg);
-}
-#image-sm-3 {
-    background-image: url(../images/dist/koehler-011.jpg);
-}
-#image-sm-4 {
-    background-image: url(../images/dist/koehler-005.jpg);
-}
-#image-sm-5 {
-    background-image: url(../images/dist/koehler-040.jpg);
-}
-#image-sm-6 {
-    background-image: url(../images/dist/koehler-020.jpg);
-}
-#image-sm-7 {
-    background-image: url(../images/dist/koehler-022.jpg);
-}
-#image-sm-8 {
-    background-image: url(../images/dist/koehler-065.jpg);
-}
-#image-sm-9 {
-    background-image: url(../images/dist/koehler-052.jpg);
+
+.thumb-image {
+    width: 75px;
+    height: 75px;
+    display: inline-block;
+    background-size: cover;
+    margin-bottom: -10px;
 }
 
 .mfb-component__button--main,

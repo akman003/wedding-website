@@ -1,25 +1,7 @@
 extends layout
 
-mixin modal(id, title, closeButtonText, buttonText)
-	div(class="modal fade" id=id tabindex="-1" role="dialog" style!=attributes.style)
-		div(class="modal-dialog" )
-			div(class="modal-content")
-				div(class="modal-header")
-					button(type="button" class="close" data-dismiss="modal" aria-label="Close")
-						span(aria-hidden="true") &times;
-					h4(class="modal-title")= title
-				div(class="modal-body")
-					#guest-search-results(style="display:none;")
-					#attendance(style="display:none;")
-					#confirmation(style="display:none;")
-					#confirmation-decline(style="display:none;")
-					#error(style="display:none;")
-				if closeButtonText || buttonText
-					div(class="modal-footer")
-						if closeButtonText
-							button(type="button" class="btn background-color-red" data-dismiss="modal")= closeButtonText
-						if buttonText
-							button(type="button" class="btn background-color-red")= buttonText
+mixin lightbox()
+	#wedding-pics-lightbox
 
 block content
 
@@ -40,137 +22,25 @@ block content
 		#directions.parallax__group__half.group2
 			div(id="directions" class="parallax__layer parallax__layer--base background-color-navy")
 				div(class="content content-text")
-					h3 We are getting married!
-					| Alex and Sami are getting married on February 20, 2016.
-					br
-					| The ceremony will take place at St. John Lutheran Church at 2 o'clock PM, in Seward, NE.
-					br
-					| The reception, immediately following the ceremony, will take place at Chez Hay in Lincoln, NE.
+					h3 We are married!
+					| Alex and Sami were married on February 20, 2016.
 					br
 					br
-					div(class="btn-group")
-						button(class="btn background-color-red")
-							a(href="https://www.google.com/maps/place/St+John+Lutheran+Church/@40.915272,-97.0924528,17z/data=!3m1!4b1!4m2!3m1!1s0x8796d7e26f5fbd55:0x3ce5614b56230d8d" target="_blank") Directions to St. John
-						button(class="btn background-color-red")
-							a(href="https://www.google.com/maps/place/Chez+Hay+Catering/@40.8150064,-96.7007718,17z/data=!3m1!4b1!4m2!3m1!1s0x8796bee4ac255951:0xe471c5d837c95f1e" target="_blank") Directions to Chez Hay
+					| The ceremony took place at St. John Lutheran Church in Seward, NE, and the reception took
+					| place at Chez Hay in Lincoln, NE.
+					br
+					br
+					| Select any photo below to begin browsing our wedding pictures.
 
 		.parallax__group__half.group2
 			div(class="parallax__layer parallax__layer--base")
-				.content.image-group
-					//- Insert smaller images here
-					.col-sm-4.col-xs-6
-						#image-sm-1.image
-					.col-sm-4.col-xs-6
-						#image-sm-2.image
-					.col-sm-4
-						#image-sm-3.image
-
-		.parallax__group__half.group3
-			div(class="parallax__layer parallax__layer--back" style="opacity: 0.5")
-				div(class="image" id="image-lg-2")
-			div(class="parallax__layer parallax__layer--base")
-				div(class="content content-text")
-					h2(class="color-red date") 2
-						span(class="color-navy date") &middot;
-						| 20
-						span(class="color-navy date") &middot;
-						| 16
-
-		//- RSVP here
-		#rsvp.parallax__group__half.group4
-			div(class="parallax__layer parallax__layer--base background-color-red")
-				div(class="content content-text")
-					h3 RSVP
-					//- | RSVPs are currently disabled. Check back soon!
-					form(id="rsvp-search")
-						label We're all booked! To notify us of any last minute changes, please <a class="color-navy" href="mailto:alexkoeh@gmail.com?subject=RSVP">send us an email.</a>
-
-		.parallax__group__half.group4
-			div(class="parallax__layer parallax__layer--base")
-				.content.image-group
-					//- Insert smaller images here
-					.col-sm-4.col-xs-6
-						#image-sm-4.image
-					.col-sm-4.col-xs-6
-						#image-sm-5.image
-					.col-sm-4
-						#image-sm-6.image
-
-		.parallax__group__half.group5
-			div(class="parallax__layer parallax__layer--back" style="opacity: 0.5")
-				div(class="image" id="image-lg-3")
-			div(class="parallax__layer parallax__layer--base")
-				div(class="content content-text")
-					h2(class="color-red date") 2
-						span(class="color-navy date") &middot;
-						| 20
-						span(class="color-navy date") &middot;
-						| 16
-
-				//- Informational stuff here (addresses, links to google maps directions)
-		#registry.parallax__group__half.group6
-			div(class="parallax__layer parallax__layer--base background-color-navy")
-				div(class="content content-text")
-					h3 Registry
-					| We are registered at Bed Bath &amp; Beyond and Target
-					br
-					br
-					div(class="btn-group")
-						button(class="btn background-color-red")
-							a(href="http://www.bedbathandbeyond.com/store/giftregistry/view_registry_guest.jsp?sorting=1&eventType=Wedding&registryId=542697878" target="_blank") Bed Bath &amp; Beyond
-						button(class="btn background-color-red")
-							a(href="http://www.target.com/gift-registry/giftgiver?registryId=nRtkIyoeaS7zJL8f8b3YIQ&registryType=WEDDING" target="_blank") Target
-
-		.parallax__group__half.group6
-			div(class="parallax__layer parallax__layer--base")
-				.content.image-group
-					//- Insert smaller images here
-					.col-sm-4.col-xs-6
-						#image-sm-7.image
-					.col-sm-4.col-xs-6
-						#image-sm-8.image
-					.col-sm-4
-						#image-sm-9.image
-
-		.parallax__group__half.group7
-			div(class="parallax__layer parallax__layer--back" style="opacity: 0.5")
-				div(class="image" id="image-lg-2")
-			div(class="parallax__layer parallax__layer--base")
-				div(class="content content-text")
-					h2(class="color-red date") 2
-						span(class="color-navy date") &middot;
-						| 20
-						span(class="color-navy date") &middot;
-						| 16
-
-		#travel-info.parallax__group__half.group8
-			div(class="parallax__layer parallax__layer--base background-color-red")
-				div(class="content content-text")
-					h3 Accomodations
-					| Our reserved hotel blocks are full!
-					br
-					| We encourage you to look at these two hotels for you accomodations.
-					br
-					br
-					div(class="btn-group")
-						button(class="btn background-color-navy")
-							a(href="http://embassysuites3.hilton.com/en/hotels/nebraska/embassy-suites-by-hilton-lincoln-LNKESES/index.html" target="_blank") Embassy Suites
-						button(class="btn background-color-navy")
-							a(href="http://www.lincolndowntownhaymarket.place.hyatt.com/en/hotel/home.html" target="_blank") Hyatt Place
-
-		.parallax__group__half.group8
-			div(class="parallax__layer parallax__layer--base")
-				.content.image-group
-					//- Insert smaller images here
-					.col-sm-4.col-xs-6
-						#image-sm-4.image
-					.col-sm-4.col-xs-6
-						#image-sm-5.image
-					.col-sm-4
-						#image-sm-6.image
-
-	+modal('rsvp-modal', 'RSVP', 'Start Over')(style="display:none;")
+				.content.image-group.background-color-navy
+					- var n = 1
+					while n < 80
+						a(href="images/dist/gallery/" + n + ".jpg" class="thumb gallery")
+							.thumb-image(style="background-image: url(../images/dist/gallery/" + n + ".jpg)")
+							- n++
+	+lightbox()
 	include overlay
-
 	include templates
 
